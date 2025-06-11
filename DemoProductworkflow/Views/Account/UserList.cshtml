@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DemoProductworkflow.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "User List";
+}
+<h2>User List</h2>
+<a asp-action="CreateUser">Create New User</a>
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Active</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.FirstName @user.LastName</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.IsActive</td>
+                <td>@user.CreatedDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (TempData["Success"] != null)
+{
+    <div style="color:green">@TempData["Success"]</div>
+}

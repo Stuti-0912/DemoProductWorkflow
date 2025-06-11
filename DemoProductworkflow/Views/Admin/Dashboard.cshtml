@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 class="text-center">Welcome to Admin Dashboard</h2>
+
+<p class="text-center">
+    <a class="btn btn-primary" href="@Url.Action("CreateUser", "Account")">Create New User</a>
+</p>
+
+<p class="text-center">
+    <a class="btn btn-secondary" href="@Url.Action("UserList", "Account")">View All Users</a>
+</p>
